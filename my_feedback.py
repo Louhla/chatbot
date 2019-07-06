@@ -46,7 +46,7 @@ def conversation(user_message):
     elif any(word in user_message for word in ['pets', 'dogs', 'dog', 'animals']):
         boto_message = 'Dog\'s are the humans best friend and favourite pet.'
         return json.dumps({"animation": "dog", "msg": boto_message})
-    elif any(word in user_message for word in ['lonely', 'sad', 'dead', 'death']):
+    elif any(word in user_message for word in ['lonely', 'sad', 'dead', 'death', 'breakup']):
         boto_message = 'This is so sad.'
         return json.dumps({"animation": "crying", "msg": boto_message})
     elif any(word in user_message for word in ['money', 'poor', 'credit', 'loan', 'rich', ' debts', 'lottery']):
@@ -60,6 +60,10 @@ def conversation(user_message):
               'grandmother', 'mummy', 'mum', 'dad', 'daddy']):
         boto_message = 'Family is so important <3'
         return json.dumps({"animation": "inlove", "msg": boto_message})
+    elif any(word in user_message for word in
+             ['sick', 'sickness', 'homeless', 'poor', 'left alone', 'lost']):
+        boto_message = 'Some things in life are hard to understand. But I can tell you, that it will get better.'
+        return json.dumps({"animation": "heartbroke", "msg": boto_message})
     else:
         boto_message = 'Please, tell me more'
         return json.dumps({"animation": "excited", "msg": boto_message})
